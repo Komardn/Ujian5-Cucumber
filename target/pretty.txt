@@ -1,0 +1,35 @@
+
+@PriorityTinggi
+Scenario Outline: Login dengan kredensial yang valid                       [90m# src/test/resources/features/Authentication.feature:12[0m
+  [32mGiven [0m[32mBuka halaman login untuk pengujian login valid[0m                     [90m# com.juaracoding.apitest.steps.TestCase01AuthValid.testStep01()[0m
+  [32mWhen [0m[32mMasukkan username [0m[32m[1m"standard_user"[0m[32m dan password [0m[32m[1m"secret_sauce"[0m[32m valid[0m [90m# com.juaracoding.apitest.steps.TestCase01AuthValid.testStep02(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mKlik tombol login untuk login valid[0m                                  [90m# com.juaracoding.apitest.steps.TestCase01AuthValid.testStep03()[0m
+  [32mThen [0m[32mPengguna berhasil masuk ke halaman produk[0m                           [90m# com.juaracoding.apitest.steps.TestCase01AuthValid.testStep04()[0m
+
+Scenario Outline: Login dengan kredensial yang tidak valid                          [90m# src/test/resources/features/Authentication.feature:22[0m
+  [32mGiven [0m[32mBuka halaman login untuk pengujian login invalid[0m                            [90m# com.juaracoding.apitest.steps.TestCase02AuthInvalid.testStep01()[0m
+  [32mWhen [0m[32mMasukkan username [0m[32m[1m"username_salah"[0m[32m dan password [0m[32m[1m"password_salah"[0m[32m tidak valid[0m [90m# com.juaracoding.apitest.steps.TestCase02AuthInvalid.testStep02(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mKlik tombol login untuk login tidak valid[0m                                     [90m# com.juaracoding.apitest.steps.TestCase02AuthInvalid.testStep03()[0m
+  [32mThen [0m[32mPengguna akan melihat pesan error[0m                                            [90m# com.juaracoding.apitest.steps.TestCase02AuthInvalid.testStep04()[0m
+
+Scenario: Verifikasi daftar produk ditampilkan setelah login                   [90m# src/test/resources/features/DaftarProduk.feature:3[0m
+  [32mGiven [0m[32mPretest verifikasi, login dengan user valid[0m                            [90m# com.juaracoding.apitest.steps.TestCase03VerifikasiProduk.testStep01()[0m
+  [32mWhen [0m[32mVerifikasi semua produk ditampilkan[0m                                     [90m# com.juaracoding.apitest.steps.TestCase03VerifikasiProduk.testStep02()[0m
+  [32mThen [0m[32mDaftar produk muncul lengkap dengan nama, harga, dan tombol Add to Cart[0m [90m# com.juaracoding.apitest.steps.TestCase03VerifikasiProduk.testStep03()[0m
+
+Scenario: Pengguna menyelesaikan proses checkout dan melihat pesan konfirmasi [90m# src/test/resources/features/PenyelesaianCheckout.feature:3[0m
+  [32mGiven [0m[32mPengguna login dan berada di halaman ringkasan pembelian[0m              [90m# com.juaracoding.apitest.steps.TestCase06CheckoutdanLogout.testStep10()[0m
+  [32mWhen [0m[32mPengguna klik tombol Finish untuk menyelesaikan pembelian[0m              [90m# com.juaracoding.apitest.steps.TestCase06CheckoutdanLogout.testStep11()[0m
+  [32mThen [0m[32mMuncul pesan THANK YOU FOR YOUR ORDER[0m                                  [90m# com.juaracoding.apitest.steps.TestCase06CheckoutdanLogout.testStep12()[0m
+  [32mWhen [0m[32mPengguna klik ikon menu dan pilih Logout[0m                               [90m# com.juaracoding.apitest.steps.TestCase06CheckoutdanLogout.testStep13()[0m
+  [32mThen [0m[32mPengguna berhasil logout dan berada di halaman login[0m                   [90m# com.juaracoding.apitest.steps.TestCase06CheckoutdanLogout.testStep14()[0m
+
+Scenario: User proceeds to checkout after adding a product to the cart        [90m# src/test/resources/features/ProsesCheckout.feature:3[0m
+  [32mGiven [0m[32mProduk sudah ditambahkan ke keranjang dan berada di halaman keranjang[0m [90m# com.juaracoding.apitest.steps.TestCase05ProsesCheckout.testStep07()[0m
+  [32mWhen [0m[32mPengguna klik tombol Checkout dan mengisi informasi pelanggan[0m          [90m# com.juaracoding.apitest.steps.TestCase05ProsesCheckout.testStep08()[0m
+  [32mThen [0m[32mPengguna diarahkan ke halaman ringkasan pembelian[0m                      [90m# com.juaracoding.apitest.steps.TestCase05ProsesCheckout.testStep09()[0m
+
+Scenario: Tambah produk ke keranjang belanja dan verifikasi tampilannya [90m# src/test/resources/features/TambahProdukKeranjang.feature:3[0m
+  [32mGiven [0m[32mLogin dengan user valid untuk tambah produk ke keranjang[0m        [90m# com.juaracoding.apitest.steps.TestCase04TambahKeranjang.testStep04()[0m
+  [32mWhen [0m[32mTambah produk ke keranjang dan buka halaman keranjang[0m            [90m# com.juaracoding.apitest.steps.TestCase04TambahKeranjang.testStep05()[0m
+  [32mThen [0m[32mProduk muncul di halaman keranjang[0m                               [90m# com.juaracoding.apitest.steps.TestCase04TambahKeranjang.testStep06()[0m

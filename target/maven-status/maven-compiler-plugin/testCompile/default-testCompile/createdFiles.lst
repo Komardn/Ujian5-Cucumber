@@ -1,0 +1,9 @@
+com\juaracoding\apitest\steps\TestCase06CheckoutdanLogout.class
+com\juaracoding\apitest\hooks\Hook.class
+com\juaracoding\apitest\steps\TestCase01AuthValid.class
+com\juaracoding\apitest\steps\TestCase02AuthInvalid.class
+com\juaracoding\apitest\runners\Runner.class
+com\juaracoding\apitest\AppTest.class
+com\juaracoding\apitest\steps\TestCase04TambahKeranjang.class
+com\juaracoding\apitest\steps\TestCase05ProsesCheckout.class
+com\juaracoding\apitest\steps\TestCase03VerifikasiProduk.class

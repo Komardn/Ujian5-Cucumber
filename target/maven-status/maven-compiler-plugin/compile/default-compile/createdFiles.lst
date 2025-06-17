@@ -1,0 +1,5 @@
+com\juaracoding\apitest\App.class
+com\juaracoding\apitest\pages\ProdukListPage.class
+com\juaracoding\apitest\pages\SignInPage.class
+com\juaracoding\apitest\BrowserManager.class
+com\juaracoding\apitest\DriverSingleton.class
